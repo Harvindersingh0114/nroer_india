@@ -105,7 +105,7 @@ class nroer_json_tree():
 			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
 			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
 		print('Source_id =',theme_item1_parent_id)
-		print('Prior_node =',theme_item11_child_id)
+		print('Prior_node_id =',theme_item11_child_id)
 
 			
 		
