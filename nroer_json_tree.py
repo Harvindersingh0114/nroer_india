@@ -42,8 +42,7 @@ class nroer_json_tree():
 	def nroer_level_1_item(self,nroer_theme):
 		"""This function will build the hierarchy of nroer_level_1_item topic and appending to children attribute of 'nroer_json_tree'(dict) """
 		chef.open_csv()
-		data_source_id = []
-		nroer_topic_item_orphan = []
+		topic_item_orphan = []
 		for key in self.data:
 			file_url = 'https://nroer.gov.in/api/v1?created_at='+ key
 			url_obj = urllib.request.urlopen(file_url)
@@ -69,19 +68,21 @@ class nroer_json_tree():
 				license=kinds.LICENSE,
 				children=[],
 				)
-				#nroer_topic_item_dict = self.process_topic_orphan(nroer_topic_item_orphan,nroer_topic_item_dict)
+				#nroer_topic_item_dict = self.process_topic_orphan(topic_item_orphan,nroer_topic_item_dict)
 				if (prior_node == ['National Curriculum'] ):
 					nroer_theme['children'].append(nroer_topic_item_dict)
 				else:
+					data_source_id = []
 					source_ids = nroer_topic_item_dict.get('source_id')
 					data_source_id.append(source_ids)
-					nroer_theme = self.fetch_parent_id(nroer_theme,data_source_id)
-					nroer_theme = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
+					nroer_topic_item_dict = self.fetch_parent_id(nroer_topic_item_dict,data_source_id)
+					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
 			
 		
-	def fetch_parent_id(self,nroer_theme,data_source_id):
+	def fetch_parent_id(self,nroer_topic_item_dict,data_source_id):
 		for element in data_source_id:
 			url = 'https://nroer.gov.in/dev/query/'+ element
+			print(url)
 			page = requests.get(url).content
 			page1 = page.decode('utf-8')
 			pattern = re.compile('= (.*?);')
@@ -94,14 +95,21 @@ class nroer_json_tree():
 				dict[i[0]] = i[1:]
 		string_a = i.replace("'","")
 		d = json.loads(string_a)
-		x = d.get('prior_node')
-		print(x)
+		prior_node = d.get('prior_node')
+		nroer_topic_item_dict['prior_node'] = prior_node
+		return nroer_topic_item_dict
 		
 	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict):
-		for element in nroer_theme['children']['children']:
-			print(element)
+		x = len(nroer_theme['children'])
+		for i in range(x):
+			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
+			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
+		print('Source_id =',theme_item1_parent_id)
+		print('Prior_node =',theme_item11_child_id)
+
 			
-	#def process_topic_orphan(nroer_topic_item_orphan,nroer_topic_item_dict):
+		
+	#def process_topic_orphan(topic_item_orphan,nroer_topic_item_dict):
 		
 		
 if __name__ == '__main__':
