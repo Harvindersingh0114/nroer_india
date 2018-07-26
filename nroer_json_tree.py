@@ -7,7 +7,7 @@ from constants import kinds
 
 class nroer_json_tree():
 	
-	def open_csv(self):
+	def open_file(self):
 		"""This function is used to open files.csv file to fetch URLs"""
 		with open('created_at.json') as f:
 			self.data = json.load(f)
@@ -41,7 +41,7 @@ class nroer_json_tree():
 				
 	def nroer_level_1_item(self,nroer_theme):
 		"""This function will build the hierarchy of nroer_level_1_item topic and appending to children attribute of 'nroer_json_tree'(dict) """
-		chef.open_csv()
+		chef.open_file()
 		topic_item_orphan = []
 		for key in self.data:
 			file_url = 'https://nroer.gov.in/api/v1?created_at='+ key
@@ -70,7 +70,7 @@ class nroer_json_tree():
 				)
 				#nroer_topic_item_dict = self.process_topic_orphan(topic_item_orphan,nroer_topic_item_dict)
 				if (prior_node == ['National Curriculum'] ):
-					nroer_theme['children'].append(nroer_topic_item_dict)
+					nroer_theme=self.append_child(nroer_theme,nroer_topic_item_dict)
 				else:
 					data_source_id = []
 					source_ids = nroer_topic_item_dict.get('source_id')
@@ -104,13 +104,17 @@ class nroer_json_tree():
 			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
 			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
 			if theme_item11_child_id in theme_item1_parent_id :
-				nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
+				#nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
+				nroer_theme = self.append_child(nroer_theme['children'],nroer_topic_item_dict)
 			
-		
+	def append_child(self,nroer_theme,nroer_topic_item_dict):
+		#nroer_topic_item_dict.pop('prior_node',None)
+		nroer_theme['children'].append(nroer_topic_item_dict)
+		return nroer_theme
 	#def process_topic_orphan(topic_item_orphan,nroer_topic_item_dict):
 		
 		
 if __name__ == '__main__':
 	chef = nroer_json_tree()
-	chef.open_csv()
+	chef.open_file()
 	chef.nroer_channel()
