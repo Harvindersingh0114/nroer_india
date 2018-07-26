@@ -82,7 +82,6 @@ class nroer_json_tree():
 	def fetch_parent_id(self,nroer_topic_item_dict,data_source_id):
 		for element in data_source_id:
 			url = 'https://nroer.gov.in/dev/query/'+ element
-			print(url)
 			page = requests.get(url).content
 			page1 = page.decode('utf-8')
 			pattern = re.compile('= (.*?);')
@@ -103,10 +102,9 @@ class nroer_json_tree():
 		x = len(nroer_theme['children'])
 		for i in range(x):
 			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
-			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
-		print('Source_id =',theme_item1_parent_id)
-		print('Prior_node_id =',theme_item11_child_id)
-
+			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
+			if theme_item11_child_id in theme_item1_parent_id :
+				nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
 			
 		
 	#def process_topic_orphan(topic_item_orphan,nroer_topic_item_dict):
