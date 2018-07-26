@@ -1,6 +1,7 @@
 *.json
 test.py
 testing.py
+/nroer_india/*
 <<<<<<< HEAD
 */nroer_india/*
 =======
