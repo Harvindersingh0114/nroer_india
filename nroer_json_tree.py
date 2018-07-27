@@ -8,13 +8,12 @@ from constants import kinds
 class nroer_json_tree():
 	
 	def open_file(self):
-		"""This function is used to open files.csv file to fetch URLs"""
+		"""This function is used to open created_at.json file to fetch URLs"""
 		with open('created_at.json') as f:
 			self.data = json.load(f)
-	
-		
+
 	def nroer_channel(self):
-		"""This function used to create channel json fwith NROER JSON Channel tree structure. """
+		"""This function used to create channel json fwith NROER-INDIA Channel tree structure. """
 		nroer_json_tree =  dict(description = 'This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json',
 			language = 'en',
 			source_domain = 'nroer.gov.in',
@@ -75,25 +74,31 @@ class nroer_json_tree():
 				else:
 					nroer_topic_item_dict = self.fetch_parent_id(nroer_topic_item_dict)
 					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
-			
+
 	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict):
 		topic_items = len(nroer_theme['children'])
 		for i in range(topic_items):
 			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
 			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
+			tree_children=[]
+			tree_children=nroer_theme['children'][i]['children']
 			if theme_item11_child_id in theme_item1_parent_id :
-				nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
+				tree_children.append(nroer_topic_item_dict)
 				#nroer_theme = self.append_child(nroer_theme['children'][i]['source_id'],nroer_topic_item_dict)
-		
+			"""else:
+				print('Else')
+				self.match_source_id_and_store_as_child(tree_children, nroer_topic_item_dict)"""
+				
 	def process_topic_orphan(self,topic_item_orphan,nroer_topic_item_dict):
 		orphan_node = len(topic_item_orphan)
-		for orphan_node in topic_item_orphan:
-			theme_item1_parent_id = topic_item_orphan['children'][i]['source_id']
-			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
+		for orphan_nodes in range(orphan_node):
+			print('In')
+			theme_item1_parent_id = topic_item_orphan[orphan_nodes]['source_id']
+			theme_item11_child_id ="".join(nroer_topic_item_dict.get('prior_node'))
 			if theme_item11_child_id in theme_item1_parent_id :
 				nroer_topic_item_dict = self.append_child(nroer_topic_item_dict,orphan_node)
-				topic_item_orphan.remove(orphan_node)
 				return nroer_topic_item_dict
+			topic_item_orphan.append(nroer_topic_item_dict)
 		return nroer_topic_item_dict
 		
 	def fetch_parent_id(self,nroer_topic_item_dict):
@@ -114,14 +119,13 @@ class nroer_json_tree():
 				dict[i[0]] = i[1:]
 		string_a = i.replace("'","")
 		d = json.loads(string_a)
-		prior_node ="".join(d.get('prior_node'))
+		prior_node = d.get('prior_node')
+		prior_node = "".join(prior_node)
 		nroer_topic_item_dict['prior_node'] = prior_node
 		return nroer_topic_item_dict
 		
-	
-			
 	def append_child(self,nroer_theme,nroer_topic_item_dict):
-		#nroer_topic_item_dict.pop('prior_node',None)
+		nroer_topic_item_dict.pop('prior_node',None)
 		nroer_theme['children'].append(nroer_topic_item_dict)
 		return nroer_theme
 	
