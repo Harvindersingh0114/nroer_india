@@ -20,7 +20,7 @@ class nroer_json_tree():
 			source_domain = 'nroer.gov.in',
 			source_id = 'nroer-json-channel_25',
 			thumbnail = 'https://nroer.gov.in/static/ndf/css/themes/nroer/logo.png',
-			title = 'NROER JSON channel',
+			title = 'NROER-INDIA',
 			children = [],
 			)
 		nroer_theme = dict(
@@ -68,18 +68,38 @@ class nroer_json_tree():
 				license=kinds.LICENSE,
 				children=[],
 				)
-				#nroer_topic_item_dict = self.process_topic_orphan(topic_item_orphan,nroer_topic_item_dict)
+				nroer_topic_item_dict = self.process_topic_orphan(topic_item_orphan,nroer_topic_item_dict)
 				if (prior_node == ['National Curriculum'] ):
-					nroer_theme=self.append_child(nroer_theme,nroer_topic_item_dict)
+					#nroer_theme['children'].append(nroer_topic_item_dict)
+					nroer_theme = self.append_child(nroer_theme,nroer_topic_item_dict)
 				else:
-					data_source_id = []
-					source_ids = nroer_topic_item_dict.get('source_id')
-					data_source_id.append(source_ids)
-					nroer_topic_item_dict = self.fetch_parent_id(nroer_topic_item_dict,data_source_id)
+					nroer_topic_item_dict = self.fetch_parent_id(nroer_topic_item_dict)
 					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
 			
+	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict):
+		topic_items = len(nroer_theme['children'])
+		for i in range(topic_items):
+			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
+			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
+			if theme_item11_child_id in theme_item1_parent_id :
+				nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
+				#nroer_theme = self.append_child(nroer_theme['children'][i]['source_id'],nroer_topic_item_dict)
 		
-	def fetch_parent_id(self,nroer_topic_item_dict,data_source_id):
+	def process_topic_orphan(self,topic_item_orphan,nroer_topic_item_dict):
+		orphan_node = len(topic_item_orphan)
+		for orphan_node in topic_item_orphan:
+			theme_item1_parent_id = topic_item_orphan['children'][i]['source_id']
+			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
+			if theme_item11_child_id in theme_item1_parent_id :
+				nroer_topic_item_dict = self.append_child(nroer_topic_item_dict,orphan_node)
+				topic_item_orphan.remove(orphan_node)
+				return nroer_topic_item_dict
+		return nroer_topic_item_dict
+		
+	def fetch_parent_id(self,nroer_topic_item_dict):
+		data_source_id = []
+		source_ids = nroer_topic_item_dict.get('source_id')
+		data_source_id.append(source_ids)
 		for element in data_source_id:
 			url = 'https://nroer.gov.in/dev/query/'+ element
 			page = requests.get(url).content
@@ -98,20 +118,13 @@ class nroer_json_tree():
 		nroer_topic_item_dict['prior_node'] = prior_node
 		return nroer_topic_item_dict
 		
-	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict):
-		x = len(nroer_theme['children'])
-		for i in range(x):
-			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
-			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
-			if theme_item11_child_id in theme_item1_parent_id :
-				#nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
-				nroer_theme = self.append_child(nroer_theme['children'],nroer_topic_item_dict)
+	
 			
 	def append_child(self,nroer_theme,nroer_topic_item_dict):
 		#nroer_topic_item_dict.pop('prior_node',None)
 		nroer_theme['children'].append(nroer_topic_item_dict)
 		return nroer_theme
-	#def process_topic_orphan(topic_item_orphan,nroer_topic_item_dict):
+	
 		
 		
 if __name__ == '__main__':
