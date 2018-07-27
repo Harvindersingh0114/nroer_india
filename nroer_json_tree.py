@@ -80,7 +80,7 @@ class nroer_json_tree():
 		topic_items = len(nroer_theme['children'])
 		for i in range(topic_items):
 			theme_item1_parent_id = nroer_theme['children'][i]['source_id']
-			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
+			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
 			if theme_item11_child_id in theme_item1_parent_id :
 				nroer_theme['children'][i]['children'].append(nroer_topic_item_dict)
 				#nroer_theme = self.append_child(nroer_theme['children'][i]['source_id'],nroer_topic_item_dict)
@@ -89,7 +89,7 @@ class nroer_json_tree():
 		orphan_node = len(topic_item_orphan)
 		for orphan_node in topic_item_orphan:
 			theme_item1_parent_id = topic_item_orphan['children'][i]['source_id']
-			theme_item11_child_id =  ''.join(nroer_topic_item_dict.get('prior_node'))
+			theme_item11_child_id =  nroer_topic_item_dict.get('prior_node')
 			if theme_item11_child_id in theme_item1_parent_id :
 				nroer_topic_item_dict = self.append_child(nroer_topic_item_dict,orphan_node)
 				topic_item_orphan.remove(orphan_node)
@@ -114,7 +114,7 @@ class nroer_json_tree():
 				dict[i[0]] = i[1:]
 		string_a = i.replace("'","")
 		d = json.loads(string_a)
-		prior_node = d.get('prior_node')
+		prior_node ="".join(d.get('prior_node'))
 		nroer_topic_item_dict['prior_node'] = prior_node
 		return nroer_topic_item_dict
 		
