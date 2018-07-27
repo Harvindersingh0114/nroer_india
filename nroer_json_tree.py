@@ -92,7 +92,6 @@ class nroer_json_tree():
 	def process_topic_orphan(self,topic_item_orphan,nroer_topic_item_dict):
 		orphan_node = len(topic_item_orphan)
 		for orphan_nodes in range(orphan_node):
-			print('In')
 			theme_item1_parent_id = topic_item_orphan[orphan_nodes]['source_id']
 			theme_item11_child_id ="".join(nroer_topic_item_dict.get('prior_node'))
 			if theme_item11_child_id in theme_item1_parent_id :
