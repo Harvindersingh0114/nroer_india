@@ -18,7 +18,7 @@ class nroer_json_tree():
 		nroer_json_tree =  dict(description = 'This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json',
 			language = 'en',
 			source_domain = 'nroer.gov.in',
-			source_id = 'nroer-json-channel_25',
+			source_id = 'nroer_india',
 			thumbnail = 'https://nroer.gov.in/static/ndf/css/themes/nroer/logo.png',
 			title = 'NROER-INDIA',
 			children = [],
@@ -34,16 +34,16 @@ class nroer_json_tree():
 				children=[],
 				)
 		nroer_json_tree['children'].append(nroer_theme)
-		self.nroer_level_1_item(nroer_theme,topic_item_orphan)
-		with open('nroer_json_tree_2.json', 'w') as fp:
+		self.nroer_topic_items(nroer_theme,topic_item_orphan)
+		with open('nroer_json_tree.json', 'w') as fp:
 				json.dump(nroer_json_tree, fp,indent=2)
 				fp.write("\n")
-				
-	def nroer_level_1_item(self,nroer_theme,topic_item_orphan):
-		"""This function will build the hierarchy of nroer_level_1_item topic and appending to children attribute of 'nroer_json_tree'(dict) """
+
+	def nroer_topic_items(self,nroer_theme,topic_item_orphan):
+		"""This function will build the hierarchy of nroer_topic_items and appending to children attribute of 'nroer_json_tree'(dict) """
 		chef.open_file()
-		for key in self.data:
-			file_url = 'https://nroer.gov.in/api/v1?created_at='+ key
+		for dates in self.data:
+			file_url = 'https://nroer.gov.in/api/v1?created_at='+ dates
 			url_obj = urllib.request.urlopen(file_url)
 			result = url_obj.read().decode('utf-8')
 			nroer_data_json = json.loads(result)	
@@ -67,34 +67,28 @@ class nroer_json_tree():
 				license=kinds.LICENSE,
 				children=[],
 				)
-				if not topic_item_orphan:
-					nroer_topic_item_dict = self.process_topic_orphan(topic_item_orphan,nroer_topic_item_dict)
+		
 				if (prior_node == ['National Curriculum'] ):
-					#nroer_theme['children'].append(nroer_topic_item_dict)
 					nroer_theme = self.append_child(nroer_theme,nroer_topic_item_dict)
 				else:
 					nroer_topic_item_dict = self.fetch_parent_id(nroer_topic_item_dict)
-					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict,topic_item_orphan)
+					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
 
-	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict,topic_item_orphan):
+	def match_source_id_and_store_as_child(self,nroer_theme, nroer_topic_item_dict):
 		for nroer_child in nroer_theme['children']:
 			if nroer_child['source_id'] in nroer_topic_item_dict['prior_node'] :
-				#i['children'].append(nroer_topic_item_dict)
 				nroer_child = self.append_child(nroer_child,nroer_topic_item_dict)
 				if (nroer_topic_item_dict['kind'] == 'topic'):
 					return nroer_theme
-				#self.match_source_id_and_store_nroer_child_as_child(nroer_child, nroer_topic_item_dict,topic_item_orphan)
-		topic_item_orphan.append(nroer_topic_item_dict)
-		print(topic_item_orphan)
+			else:
+				self.match_source_id_and_store_nroer_child_as_child(nroer_child, nroer_topic_item_dict)
 		return nroer_theme
-		
-	def process_topic_orphan(self,topic_item_orphan,nroer_topic_item_dict):
-		for orphan_nodes in topic_item_orphan:
-			if orphan_nodes['source_id'] in nroer_topic_item_dict['prior_node']  :
-				nroer_topic_item_dict = self.append_child(nroer_topic_item_dict,orphan_node)
-				return nroer_topic_item_dict
-		return nroer_topic_item_dict
-		
+
+	def match_source_id_and_store_nroer_child_as_child(self,nroer_child, nroer_topic_item_dict):
+		for child in nroer_child['children']:
+					if child['source_id'] in nroer_topic_item_dict['prior_node']:
+						child = self.append_child(child,nroer_topic_item_dict)
+	
 	def fetch_parent_id(self,nroer_topic_item_dict):
 		data_source_id = []
 		source_ids = nroer_topic_item_dict.get('source_id')
@@ -117,13 +111,11 @@ class nroer_json_tree():
 		prior_node = "".join(prior_node)
 		nroer_topic_item_dict['prior_node'] = prior_node
 		return nroer_topic_item_dict
-		
+
 	def append_child(self,nroer_theme,nroer_topic_item_dict):
 		nroer_theme['children'].append(nroer_topic_item_dict)
 		return nroer_theme
 	
-		
-		
 if __name__ == '__main__':
 	chef = nroer_json_tree()
 	chef.open_file()

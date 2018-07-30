@@ -2,7 +2,7 @@
   "description": "This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json",
   "language": "en",
   "source_domain": "nroer.gov.in",
-  "source_id": "nroer-json-channel_25",
+  "source_id": "nroer_india",
   "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/logo.png",
   "title": "NROER-INDIA",
   "children": [
@@ -32,7 +32,52 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
+              "children": [
+                {
+                  "kind": "topic",
+                  "title": "Patterns and Symmetry",
+                  "source_id": "55b1f72281fccb7926fe5456",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Observation and recognition of patterns in mathematics. Transformations and explorations of symmetry in mathematical objects.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72181fccb7926fe5453"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Mathematical Reasoning",
+                  "source_id": "55b1f72281fccb7926fe545b",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Application of mathematical skills to recognize and generalize patterns to problem solve. Inductive and deductive reasoning. Using of the  mathematical language of statements, axioms, postulates, definitions, theorems and fundamental theorems.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72181fccb7926fe5453"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Proofs in Mathematics",
+                  "source_id": "55b1f72381fccb7926fe5460",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Application of mathematical reasoning to demonstrate the truth of a given proposition.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72181fccb7926fe5453"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Mathematical Modelling",
+                  "source_id": "55b1f72381fccb7926fe5465",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Development of models using mathematical concepts to describe the behaviour of a system.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72181fccb7926fe5453"
+                }
+              ],
               "prior_node": "55b1f72181fccb7926fe5451"
             },
             {
@@ -43,7 +88,52 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
+              "children": [
+                {
+                  "kind": "topic",
+                  "title": "Knowing Numbers",
+                  "source_id": "55b1f72481fccb7926fe546c",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Numbers as mathematical objects. Number line and classification of numbers. Properties of numbers.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72481fccb7926fe5469"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Number Operations",
+                  "source_id": "55b1f72581fccb7926fe5471",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Readiness for algebra. Relationships between numbers. Consequences of operations on numbers.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72481fccb7926fe5469"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Money and Transactions",
+                  "source_id": "55b1f72581fccb7926fe5476",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Numbers and number operations applied to money and transactions including ideas of profit and loss.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72481fccb7926fe5469"
+                },
+                {
+                  "kind": "topic",
+                  "title": "Fractions",
+                  "source_id": "55b1f72681fccb7926fe547b",
+                  "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Fractions in arithmetic. Real numbers. Operations on fractions.\n</p></div>\n",
+                  "language": "en",
+                  "thumbnail": null,
+                  "license": "CC BY-SA",
+                  "children": [],
+                  "prior_node": "55b1f72481fccb7926fe5469"
+                }
+              ],
               "prior_node": "55b1f72181fccb7926fe5451"
             },
             {
