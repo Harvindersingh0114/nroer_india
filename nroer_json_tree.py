@@ -35,7 +35,7 @@ class nroer_json_tree():
 				)
 		nroer_json_tree['children'].append(nroer_theme)
 		self.nroer_level_1_item(nroer_theme,topic_item_orphan)
-		with open('nroer_json_tree_2.json', 'w') as fp:
+		with open('nroer_json_tree.json', 'w') as fp:
 				json.dump(nroer_json_tree, fp,indent=2)
 				fp.write("\n")
 				

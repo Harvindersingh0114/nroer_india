@@ -2,7 +2,7 @@
   "description": "This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json",
   "language": "en",
   "source_domain": "nroer.gov.in",
-  "source_id": "nroer_india",
+  "source_id": "nroer-json-channel_25",
   "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/logo.png",
   "title": "NROER-INDIA",
   "children": [
@@ -15,6 +15,121 @@
       "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/images/default-bg.png",
       "license": "CC BY-SA",
       "children": [
+        {
+          "kind": "topic",
+          "title": "Physics",
+          "source_id": "55c8a5d381fccb28a4fd3995",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": [
+            {
+              "kind": "topic",
+              "title": "Physical World",
+              "source_id": "55c8a5d381fccb28a4fd3997",
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "license": "CC BY-SA",
+              "children": [],
+              "prior_node": "55c8a5d381fccb28a4fd3995"
+            },
+            {
+              "kind": "topic",
+              "title": "Mechanics",
+              "source_id": "55c8a5d681fccb28a4fd39ad",
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "license": "CC BY-SA",
+              "children": [],
+              "prior_node": "55c8a5d381fccb28a4fd3995"
+            },
+            {
+              "kind": "topic",
+              "title": "Heat and Thermodynamics",
+              "source_id": "55c8a5d881fccb28a4fd39c3",
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "license": "CC BY-SA",
+              "children": [],
+              "prior_node": "55c8a5d381fccb28a4fd3995"
+            },
+            {
+              "kind": "topic",
+              "title": "Oscillations and Waves",
+              "source_id": "55c8a5db81fccb28a4fd39de",
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "license": "CC BY-SA",
+              "children": [],
+              "prior_node": "55c8a5d381fccb28a4fd3995"
+            }
+          ]
+        },
+        {
+          "kind": "topic",
+          "title": "Chemistry",
+          "source_id": "55c8a5e881fccb28a4fd3a47",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
+        {
+          "kind": "topic",
+          "title": "Biology",
+          "source_id": "55c8a5f981fccb28a4fd3ad0",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
+        {
+          "kind": "topic",
+          "title": "Geography",
+          "source_id": "55c8a61081fccb28a4fd3b88",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
+        {
+          "kind": "topic",
+          "title": "History",
+          "source_id": "55c8a62581fccb28a4fd3c3f",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
+        {
+          "kind": "topic",
+          "title": "Political Science",
+          "source_id": "55c8a63881fccb28a4fd3cd0",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
+        {
+          "kind": "topic",
+          "title": "Economics",
+          "source_id": "55c8a64c81fccb28a4fd3d7e",
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "license": "CC BY-SA",
+          "children": []
+        },
         {
           "kind": "topic",
           "title": "Mathematics",
@@ -41,7 +156,33 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
+                  "children": [
+                    {
+                      "kind": "document",
+                      "title": "Knowing Our Numbers",
+                      "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Chapter 01 of the Mathematics textbook for class 06\n</p></div>\n",
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "thumbnail": null,
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
+                          "language": "en"
+                        }
+                      ],
+                      "license": {
+                        "license_id": "CC BY-SA",
+                        "description": "",
+                        "copyright_holder": "nroer_team"
+                      },
+                      "prior_node": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ]
+                    }
+                  ],
                   "prior_node": "55b1f72181fccb7926fe5453"
                 },
                 {
@@ -97,7 +238,33 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
+                  "children": [
+                    {
+                      "kind": "document",
+                      "title": "Knowing Our Numbers",
+                      "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Chapter 01 of the Mathematics textbook for class 06\n</p></div>\n",
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "thumbnail": null,
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
+                          "language": "en"
+                        }
+                      ],
+                      "license": {
+                        "license_id": "CC BY-SA",
+                        "description": "",
+                        "copyright_holder": "nroer_team"
+                      },
+                      "prior_node": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ]
+                    }
+                  ],
                   "prior_node": "55b1f72481fccb7926fe5469"
                 },
                 {
@@ -108,7 +275,33 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
+                  "children": [
+                    {
+                      "kind": "document",
+                      "title": "Knowing Our Numbers",
+                      "description": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Chapter 01 of the Mathematics textbook for class 06\n</p></div>\n",
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "thumbnail": null,
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
+                          "language": "en"
+                        }
+                      ],
+                      "license": {
+                        "license_id": "CC BY-SA",
+                        "description": "",
+                        "copyright_holder": "nroer_team"
+                      },
+                      "prior_node": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ]
+                    }
+                  ],
                   "prior_node": "55b1f72481fccb7926fe5469"
                 },
                 {
@@ -225,121 +418,6 @@
               "prior_node": "55b1f72181fccb7926fe5451"
             }
           ]
-        },
-        {
-          "kind": "topic",
-          "title": "Physics",
-          "source_id": "55c8a5d381fccb28a4fd3995",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": [
-            {
-              "kind": "topic",
-              "title": "Physical World",
-              "source_id": "55c8a5d381fccb28a4fd3997",
-              "description": null,
-              "language": "en",
-              "thumbnail": null,
-              "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
-            },
-            {
-              "kind": "topic",
-              "title": "Mechanics",
-              "source_id": "55c8a5d681fccb28a4fd39ad",
-              "description": null,
-              "language": "en",
-              "thumbnail": null,
-              "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
-            },
-            {
-              "kind": "topic",
-              "title": "Heat and Thermodynamics",
-              "source_id": "55c8a5d881fccb28a4fd39c3",
-              "description": null,
-              "language": "en",
-              "thumbnail": null,
-              "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
-            },
-            {
-              "kind": "topic",
-              "title": "Oscillations and Waves",
-              "source_id": "55c8a5db81fccb28a4fd39de",
-              "description": null,
-              "language": "en",
-              "thumbnail": null,
-              "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
-            }
-          ]
-        },
-        {
-          "kind": "topic",
-          "title": "Chemistry",
-          "source_id": "55c8a5e881fccb28a4fd3a47",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
-        },
-        {
-          "kind": "topic",
-          "title": "Biology",
-          "source_id": "55c8a5f981fccb28a4fd3ad0",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
-        },
-        {
-          "kind": "topic",
-          "title": "Geography",
-          "source_id": "55c8a61081fccb28a4fd3b88",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
-        },
-        {
-          "kind": "topic",
-          "title": "History",
-          "source_id": "55c8a62581fccb28a4fd3c3f",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
-        },
-        {
-          "kind": "topic",
-          "title": "Political Science",
-          "source_id": "55c8a63881fccb28a4fd3cd0",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
-        },
-        {
-          "kind": "topic",
-          "title": "Economics",
-          "source_id": "55c8a64c81fccb28a4fd3d7e",
-          "description": null,
-          "language": "en",
-          "thumbnail": null,
-          "license": "CC BY-SA",
-          "children": []
         }
       ]
     }
