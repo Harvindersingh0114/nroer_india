@@ -1,5 +1,5 @@
 {
-  "description": "This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json",
+  "description": "This channel was created for the educational content which are published by NROER-INDIA.",
   "language": "en",
   "source_domain": "nroer.gov.in",
   "source_id": "nroer-json-channel_25",
@@ -10,7 +10,7 @@
       "kind": "topic",
       "title": "Theme",
       "source_id": "theme_topic",
-      "description": "This directory will contain all the data with the nodes which are included in theme tree of NROER",
+      "description": "This directory will contain all nodes which are included in theme_tree of NROER",
       "language": "en",
       "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/images/default-bg.png",
       "license": "CC BY-SA",
@@ -32,8 +32,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
+              "children": []
             },
             {
               "kind": "topic",
@@ -43,8 +42,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
+              "children": []
             },
             {
               "kind": "topic",
@@ -54,8 +52,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
+              "children": []
             },
             {
               "kind": "topic",
@@ -65,8 +62,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55c8a5d381fccb28a4fd3995"
+              "children": []
             }
           ]
         },
@@ -156,34 +152,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [
-                    {
-                      "kind": "document",
-                      "title": "Knowing Our Numbers",
-                      "description": "Chapter 01 of the Mathematics textbook for class 06",
-                      "source_id": "55b23f2881fccb054b6be25f",
-                      "language": "en",
-                      "thumbnail": null,
-                      "files": [
-                        {
-                          "file_type": "document",
-                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
-                          "language": "en"
-                        }
-                      ],
-                      "license": {
-                        "license_id": "CC BY-SA",
-                        "description": "",
-                        "copyright_holder": "nroer_team"
-                      },
-                      "prior_node": [
-                        "55b1f72281fccb7926fe5456",
-                        "55b1f72481fccb7926fe546c",
-                        "55b1f72581fccb7926fe5471"
-                      ]
-                    }
-                  ],
-                  "prior_node": "55b1f72181fccb7926fe5453"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -193,8 +162,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
-                  "prior_node": "55b1f72181fccb7926fe5453"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -204,8 +172,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
-                  "prior_node": "55b1f72181fccb7926fe5453"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -215,11 +182,9 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
-                  "prior_node": "55b1f72181fccb7926fe5453"
+                  "children": []
                 }
-              ],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              ]
             },
             {
               "kind": "topic",
@@ -238,34 +203,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [
-                    {
-                      "kind": "document",
-                      "title": "Knowing Our Numbers",
-                      "description": "Chapter 01 of the Mathematics textbook for class 06",
-                      "source_id": "55b23f2881fccb054b6be25f",
-                      "language": "en",
-                      "thumbnail": null,
-                      "files": [
-                        {
-                          "file_type": "document",
-                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
-                          "language": "en"
-                        }
-                      ],
-                      "license": {
-                        "license_id": "CC BY-SA",
-                        "description": "",
-                        "copyright_holder": "nroer_team"
-                      },
-                      "prior_node": [
-                        "55b1f72281fccb7926fe5456",
-                        "55b1f72481fccb7926fe546c",
-                        "55b1f72581fccb7926fe5471"
-                      ]
-                    }
-                  ],
-                  "prior_node": "55b1f72481fccb7926fe5469"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -275,34 +213,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [
-                    {
-                      "kind": "document",
-                      "title": "Knowing Our Numbers",
-                      "description": "Chapter 01 of the Mathematics textbook for class 06",
-                      "source_id": "55b23f2881fccb054b6be25f",
-                      "language": "en",
-                      "thumbnail": null,
-                      "files": [
-                        {
-                          "file_type": "document",
-                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf",
-                          "language": "en"
-                        }
-                      ],
-                      "license": {
-                        "license_id": "CC BY-SA",
-                        "description": "",
-                        "copyright_holder": "nroer_team"
-                      },
-                      "prior_node": [
-                        "55b1f72281fccb7926fe5456",
-                        "55b1f72481fccb7926fe546c",
-                        "55b1f72581fccb7926fe5471"
-                      ]
-                    }
-                  ],
-                  "prior_node": "55b1f72481fccb7926fe5469"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -312,8 +223,7 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
-                  "prior_node": "55b1f72481fccb7926fe5469"
+                  "children": []
                 },
                 {
                   "kind": "topic",
@@ -323,11 +233,9 @@
                   "language": "en",
                   "thumbnail": null,
                   "license": "CC BY-SA",
-                  "children": [],
-                  "prior_node": "55b1f72481fccb7926fe5469"
+                  "children": []
                 }
-              ],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              ]
             },
             {
               "kind": "topic",
@@ -337,8 +245,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -348,8 +255,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -359,8 +265,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -370,8 +275,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -381,8 +285,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -392,8 +295,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -403,8 +305,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             },
             {
               "kind": "topic",
@@ -414,8 +315,7 @@
               "language": "en",
               "thumbnail": null,
               "license": "CC BY-SA",
-              "children": [],
-              "prior_node": "55b1f72181fccb7926fe5451"
+              "children": []
             }
           ]
         }

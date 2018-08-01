@@ -3,6 +3,8 @@ import json
 import requests
 import ast
 import re
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
 from constants import kinds
 
 class nroer_json_tree():
@@ -68,6 +70,13 @@ class nroer_json_tree():
 				license=kinds.LICENSE,
 				children=[],
 				)
+				
+				if (member_of == "Topic"):
+					node_item = urlopen(file_url)
+					soups = BeautifulSoup(node_item, 'html.parser')
+					p_tag = soups.find('p')
+					topic_description = p_tag.text.strip('\\n')
+					nroer_topic_item_dict['description'] = topic_description
 		
 				if (prior_node == ['National Curriculum'] ):
 					nroer_theme = self.append_child(nroer_theme,nroer_topic_item_dict)
@@ -76,11 +85,15 @@ class nroer_json_tree():
 					nroer_topic_item_dict = self.match_source_id_and_store_as_child(nroer_theme, nroer_topic_item_dict)
 
 			elif (member_of == "File") :
+				file_node = urlopen(file_url)
+				soups = BeautifulSoup(file_node, 'html.parser')
+				p_tag = soups.find('p')
+				file_description = p_tag.text.strip('\\n')
 				if (type=="application/pdf"):
 					nroer_file_item_dict = dict (
 					kind = kinds.DOCUMENT,
 					title = title,
-					description = description,
+					description = file_description,
 					source_id = source_id,
 					language = language,
 					thumbnail = thumbnail,
