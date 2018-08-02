@@ -1,0 +1,475 @@
+{
+  "source_domain": "nroer.gov.in",
+  "description": "This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json",
+  "title": "NROER-INDIA",
+  "source_id": "nroer-json-channel_25_6",
+  "language": "en",
+  "children": [
+    {
+      "description": "This directory will contain all the data with the nodes which are included in theme tree of NROER",
+      "language": "en",
+      "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/images/default-bg.png",
+      "kind": "topic",
+      "title": "Theme",
+      "license": "CC BY-SA",
+      "source_id": "theme_topic",
+      "children": [
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Physics",
+          "license": "CC BY-SA",
+          "source_id": "55c8a5d381fccb28a4fd3995",
+          "children": [
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Physical World",
+              "license": "CC BY-SA",
+              "source_id": "55c8a5d381fccb28a4fd3997",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Mechanics",
+              "license": "CC BY-SA",
+              "source_id": "55c8a5d681fccb28a4fd39ad",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Heat and Thermodynamics",
+              "license": "CC BY-SA",
+              "source_id": "55c8a5d881fccb28a4fd39c3",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Oscillations and Waves",
+              "license": "CC BY-SA",
+              "source_id": "55c8a5db81fccb28a4fd39de",
+              "children": []
+            }
+          ]
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Chemistry",
+          "license": "CC BY-SA",
+          "source_id": "55c8a5e881fccb28a4fd3a47",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Biology",
+          "license": "CC BY-SA",
+          "source_id": "55c8a5f981fccb28a4fd3ad0",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Geography",
+          "license": "CC BY-SA",
+          "source_id": "55c8a61081fccb28a4fd3b88",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "History",
+          "license": "CC BY-SA",
+          "source_id": "55c8a62581fccb28a4fd3c3f",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Political Science",
+          "license": "CC BY-SA",
+          "source_id": "55c8a63881fccb28a4fd3cd0",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Economics",
+          "license": "CC BY-SA",
+          "source_id": "55c8a64c81fccb28a4fd3d7e",
+          "children": []
+        },
+        {
+          "description": null,
+          "language": "en",
+          "thumbnail": null,
+          "kind": "topic",
+          "title": "Mathematics",
+          "license": "CC BY-SA",
+          "source_id": "55b1f72181fccb7926fe5451",
+          "children": [
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Foundation",
+              "license": "CC BY-SA",
+              "source_id": "55b1f72181fccb7926fe5453",
+              "children": [
+                {
+                  "description": "Observation and recognition of patterns in mathematics. Transformations and explorations of symmetry in mathematical objects.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Patterns and Symmetry",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72281fccb7926fe5456",
+                  "children": [
+                    {
+                      "kind": "document",
+                      "description": "Chapter 01 of the Mathematics textbook for class 06",
+                      "prior_node_id": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "title": "Knowing Our Numbers",
+                      "thumbnail": null
+                    }
+                  ]
+                },
+                {
+                  "description": "Application of mathematical skills to recognize and generalize patterns to problem solve. Inductive and deductive reasoning. Using of the  mathematical language of statements, axioms, postulates, definitions, theorems and fundamental theorems.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Mathematical Reasoning",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72281fccb7926fe545b",
+                  "children": [
+                    {
+                      "kind": "video",
+                      "description": "Episode 01 of the video lectures on chapter 04 of the Mathematics textbook for class 11; covers introduction to mathematical inductio",
+                      "prior_node_id": [
+                        "55b1f72281fccb7926fe545b"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "video",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/9/9/9/4f9a5fbd6582a4966f8d253867fde7fc4afb9457378d2f403ac8879d3c03f.mp4"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55dec32a81fccb3e990e79b9",
+                      "language": "en",
+                      "title": "Mathematical Induction",
+                      "thumbnail": "https://nroer.gov.in/media/b/e/a/a2d62ab641b266ba8e8cee09d46f077d61ede232cd6588cae689dbd2ea00e.png"
+                    }
+                  ]
+                },
+                {
+                  "description": "Application of mathematical reasoning to demonstrate the truth of a given proposition.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Proofs in Mathematics",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72381fccb7926fe5460",
+                  "children": []
+                },
+                {
+                  "description": "Development of models using mathematical concepts to describe the behaviour of a system.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Mathematical Modelling",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72381fccb7926fe5465",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Number Systems",
+              "license": "CC BY-SA",
+              "source_id": "55b1f72481fccb7926fe5469",
+              "children": [
+                {
+                  "description": "Numbers as mathematical objects. Number line and classification of numbers. Properties of numbers.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Knowing Numbers",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72481fccb7926fe546c",
+                  "children": [
+                    {
+                      "kind": "document",
+                      "description": "Chapter 01 of the Mathematics textbook for class 06",
+                      "prior_node_id": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "title": "Knowing Our Numbers",
+                      "thumbnail": null
+                    },
+                    {
+                      "kind": "document",
+                      "description": "Chapter 03 of the Mathematics textbook for class 06",
+                      "prior_node_id": [
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/e/a/7/ffc10b067ec3e6c0c1d0d5ee56f6822919cb6333f19f528d4fd9de81f8626.pdf"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55b23f2d81fccb054b6be2a0",
+                      "language": "en",
+                      "title": "Playing with Numbers",
+                      "thumbnail": null
+                    }
+                  ]
+                },
+                {
+                  "description": "Readiness for algebra. Relationships between numbers. Consequences of operations on numbers.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Number Operations",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72581fccb7926fe5471",
+                  "children": [
+                    {
+                      "kind": "document",
+                      "description": "Chapter 01 of the Mathematics textbook for class 06",
+                      "prior_node_id": [
+                        "55b1f72281fccb7926fe5456",
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/9/6/d/2f1abaf12e31e4903c1a6392f3c31bd95a589c0fbecd3f7a657b812bfbd14.pdf"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55b23f2881fccb054b6be25f",
+                      "language": "en",
+                      "title": "Knowing Our Numbers",
+                      "thumbnail": null
+                    },
+                    {
+                      "kind": "document",
+                      "description": "Chapter 03 of the Mathematics textbook for class 06",
+                      "prior_node_id": [
+                        "55b1f72481fccb7926fe546c",
+                        "55b1f72581fccb7926fe5471"
+                      ],
+                      "files": [
+                        {
+                          "file_type": "document",
+                          "language": "en",
+                          "path": "https://nroer.gov.in/media/e/a/7/ffc10b067ec3e6c0c1d0d5ee56f6822919cb6333f19f528d4fd9de81f8626.pdf"
+                        }
+                      ],
+                      "license": {
+                        "description": "",
+                        "copyright_holder": "nroer_team",
+                        "license_id": "CC BY-SA"
+                      },
+                      "source_id": "55b23f2d81fccb054b6be2a0",
+                      "language": "en",
+                      "title": "Playing with Numbers",
+                      "thumbnail": null
+                    }
+                  ]
+                },
+                {
+                  "description": "Numbers and number operations applied to money and transactions including ideas of profit and loss.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Money and Transactions",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72581fccb7926fe5476",
+                  "children": []
+                },
+                {
+                  "description": "Fractions in arithmetic. Real numbers. Operations on fractions.",
+                  "language": "en",
+                  "thumbnail": null,
+                  "kind": "topic",
+                  "title": "Fractions",
+                  "license": "CC BY-SA",
+                  "source_id": "55b1f72681fccb7926fe547b",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Geometry",
+              "license": "CC BY-SA",
+              "source_id": "55b1f72781fccb7926fe5489",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Algebra",
+              "license": "CC BY-SA",
+              "source_id": "55b1f72981fccb7926fe549f",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Measurements",
+              "license": "CC BY-SA",
+              "source_id": "55b1f72e81fccb7926fe54c4",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Statistics",
+              "license": "CC BY-SA",
+              "source_id": "55b1f73081fccb7926fe54d5",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Coordinate Geometry",
+              "license": "CC BY-SA",
+              "source_id": "55b1f73281fccb7926fe54eb",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Trigonometry",
+              "license": "CC BY-SA",
+              "source_id": "55b1f73481fccb7926fe54fc",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Calculus",
+              "license": "CC BY-SA",
+              "source_id": "55b1f73681fccb7926fe550d",
+              "children": []
+            },
+            {
+              "description": null,
+              "language": "en",
+              "thumbnail": null,
+              "kind": "topic",
+              "title": "Sets",
+              "license": "CC BY-SA",
+              "source_id": "55b1f73981fccb7926fe5523",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "thumbnail": "https://nroer.gov.in/static/ndf/css/themes/nroer/logo.png"
+}
