@@ -3,22 +3,17 @@ import json
 import requests
 import ast
 import re
-import logging
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from le_utils.constants import content_kinds, file_types, exercises, licenses
 from ricecooker.chefs import JsonTreeChef
 from ricecooker.classes.licenses import get_license
-from le_utils.constants.languages import getlang  
-from ricecooker.config import LOGGER
 from ricecooker.utils.jsontrees import write_tree_to_json_tree
 
 class NroerChannelJsonChef(JsonTreeChef):
 	
-	nroer_channel_tree = 'nroer_india_channel.json'
-	
 	def pre_run(self,args,options):
-		
+		"""Function to generate nroer_channel_tree and will write tree into json tree"""
 		nroer_channel_tree =  dict(
 			description = 'This channel was created from the files in the contentdirectory and the metadata in nroer_json_tree.json',
 			language = 'en',
@@ -36,27 +31,27 @@ class NroerChannelJsonChef(JsonTreeChef):
 	def create_theme_nodes(self,nroer_channel_tree):
 		"""Function to generate and append nroer_theme_tree in to channel tree"""
 		nroer_theme_tree = dict(
-				kind = content_kinds.TOPIC,
-				title='Theme',
-				source_id='theme_topic',
-				description='This directory will contain all the data with the nodes which are included in theme tree of NROER',
-				language='en',
-				thumbnail='https://nroer.gov.in/static/ndf/css/themes/nroer/images/default-bg.png',
-				license= licenses.CC_BY_SA,
-				children=[],
-				)
+			kind = content_kinds.TOPIC,
+			title='Theme',
+			source_id='theme_topic',
+			description='This directory will contain all the data with the nodes which are included in theme tree of NROER',
+			language='en',
+			thumbnail='https://nroer.gov.in/static/ndf/css/themes/nroer/images/default-bg.png',
+			license= licenses.CC_BY_SA,
+			children=[],
+			)
 		nroer_channel_tree['children'].append(nroer_theme_tree)
 		self.node_attributes(nroer_theme_tree)
 		
 	def open_file(self):
 		"""This function is used to open created_at.json file to fetch URLs"""
 		with open('created_at.json') as f:
-			self.data = json.load(f)
+			self.created_at = json.load(f)
 	def node_attributes(self,nroer_theme_tree):
 		chef.open_file()
-		for key in self.data:
-			self.file_url = 'https://nroer.gov.in/api/v1?created_at='+ key
-			url_obj = urllib.request.urlopen(self.file_url)
+		for dates in self.created_at:
+			self.node_url = 'https://nroer.gov.in/api/v1?created_at='+ dates
+			url_obj = urllib.request.urlopen(self.node_url)
 			result = url_obj.read().decode('utf-8')
 			nroer_data_json = json.loads(result)	
 			self.member_of =  nroer_data_json[0]['member_of'][0]
@@ -77,21 +72,22 @@ class NroerChannelJsonChef(JsonTreeChef):
 
 	def nroer_theme_item(self,nroer_theme_tree):
 		nroer_topic_node = dict(
-		kind=content_kinds.TOPIC,
-		title=self.title,
-		source_id=self.source_id,
-		description=self.description,
-		language=self.language,
-		thumbnail= self.thumbnail,
-		license=licenses.CC_BY_SA,
-		children=[],
-		)
+			kind=content_kinds.TOPIC,
+			title=self.title,
+			source_id=self.source_id,
+			description=self.description,
+			language=self.language,
+			thumbnail= self.thumbnail,
+			license=licenses.CC_BY_SA,
+			children=[],
+			)
+			
 		if (self.member_of == "Topic"):
-			node_file = urlopen(self.file_url)
-			soups = BeautifulSoup(node_file, 'html.parser')
+			html_link = urlopen(self.node_url)
+			soups = BeautifulSoup(html_link, 'html.parser')
 			p_tag = soups.find('p')
-			topic_description = p_tag.text.strip('\\n')
-			nroer_topic_node['description'] = topic_description
+			topic_node_description = p_tag.text.strip('\\n')
+			nroer_topic_node['description'] = topic_node_description
 
 		if (self.prior_node == ['National Curriculum'] ):
 			nroer_theme_tree = self.append_child(nroer_theme_tree,nroer_topic_node)
@@ -104,8 +100,8 @@ class NroerChannelJsonChef(JsonTreeChef):
 		node_html = 'https://nroer.gov.in/dev/query/'+ nroer_topic_node['source_id']
 		node_html_content = requests.get(node_html).content
 		html_data = node_html_content.decode('utf-8')
-		node_expression = re.compile('= (.*)\\n*;')
-		search_html = node_expression.search(html_data)
+		node_reg_expression = re.compile('= (.*)\\n*;')
+		search_html = node_reg_expression.search(html_data)
 		node_data = search_html.group(1)
 		node_json_value = ast.literal_eval(node_data)
 		node={}
@@ -132,11 +128,11 @@ class NroerChannelJsonChef(JsonTreeChef):
 		return nroer_theme_tree
 		
 	def nroer_content_node(self,nroer_theme_tree):
-		file_node = urlopen(self.file_url)
+		file_node = urlopen(self.node_url)
 		soups = BeautifulSoup(file_node, 'html.parser')
 		p_tag = soups.find('p')
 		file_description = p_tag.text.strip('\\n')
-		nroer_file_node = dict (
+		nroer_content_node = dict (
 			title = self.title,
 			description = file_description,
 			source_id = self.source_id,
@@ -151,40 +147,29 @@ class NroerChannelJsonChef(JsonTreeChef):
 		file_dict = dict(
 			path = 'https://nroer.gov.in/media/'+ self.path,
 			language = self.language)
-		nroer_file_node['files'].append(file_dict)	
+		nroer_content_node['files'].append(file_dict)	
 		if (self.type=="application/pdf"):
-			nroer_file_node.update(kind = content_kinds.DOCUMENT)
+			nroer_content_node.update(kind = content_kinds.DOCUMENT)
 			file_dict.update(file_type = content_kinds.DOCUMENT)
 		elif (self.type=="video/mp4"):
-			nroer_file_node.update(kind = content_kinds.VIDEO)
+			nroer_content_node.update(kind = content_kinds.VIDEO,
+			thumbnail = 'https://nroer.gov.in/media/' + self.thumbnail)
 			file_dict.update(file_type = content_kinds.VIDEO)
 		elif (self.type=="audio/mpeg"):
-			nroer_file_node.update(kind = content_kinds.AUDIO)
+			nroer_content_node.update(kind = content_kinds.AUDIO)
 			file_dict.update(file_type = content_kinds.AUDIO)
 		else:
 			print('kind not supported')
-		nroer_file_node = self.extract_json_from_html(nroer_file_node)
-		nroer_file_node = self.find_prior_node_in_theme_topics(nroer_theme_tree,nroer_file_node)
+		nroer_content_node = self.extract_json_from_html(nroer_content_node)
+		nroer_content_node = self.find_prior_node_in_theme_topics(nroer_theme_tree,nroer_content_node)
 		
-	def find_prior_node_in_theme_topics(self,nroer_theme_tree,nroer_file_node):
+	def find_prior_node_in_theme_topics(self,nroer_theme_tree,nroer_content_node):
 		for theme_item in nroer_theme_tree['children']:
-			if theme_item['source_id'] in nroer_file_node['prior_node_id']:
-				theme_item = self.append_child(nroer_theme_tree,nroer_file_node)
-			else:
-				self.find_prior_node_in_theme_item_topics(theme_item,nroer_file_node)
+			for topic_item in theme_item['children']:
+				for topic in topic_item['children']:
+					if topic['source_id'] in nroer_content_node['prior_node_id']:
+						topic = self.append_child(topic,nroer_content_node)
 		return nroer_theme_tree
-		
-	def find_prior_node_in_theme_item_topics(self,theme_item,nroer_file_node):
-		for topic_item in theme_item['children']:
-			if topic_item['source_id'] in nroer_file_node['prior_node_id']:
-				topic_item = self.append_child(topic_item,nroer_file_node)
-			else:
-				self.find_prior_node_in_topics(topic_item,nroer_file_node)
-		
-	def find_prior_node_in_topics(self,topic_item,nroer_file_node):
-		for topic in topic_item['children']:
-			if topic['source_id'] in nroer_file_node['prior_node_id']:
-				topic = self.append_child(topic,nroer_file_node)
 	
 	def append_child(self,nroer_theme_tree,nroer_topic_node):
 		"""Function to append all kind of nodes into tree"""
